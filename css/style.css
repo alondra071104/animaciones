@@ -1,46 +1,61 @@
 #fondo {
   width: 100vw;
   height: 100vh;
-  background-image: url('../img/bg.jpg'); /* Ruta corregida */
+  background-image: url('../img/bg.jpg'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-.personaje {
-  width: 100px;
-  height: 100px;
-  background-image: url('../img/dk.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+
+div.barril{
   position: absolute;
-  bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 480px;
+  left:  120px;
 }
 
-.barril {
-  width: 60px;
-  height: 60px;
-  background-image: url('../img/barril.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+div.barril2{
   position: absolute;
-  bottom: 50px;
+  top: 500px;
+  right: 180px;
+  transform: rotate(135deg);
 }
 
-.barril-izquierdo {
-  left: 100px;
+.dk{
+  width: 200px;
+  position:absolute;
+  top:250px;
+  left: 200px;
+  animation-name: saltos;
+  animation-duration: 5s;
 }
 
-.barril-derecho {
-  right: 100px;
+.girobarril{
+animation-name: rotarbarril;
+animation-duration: 3s;
+animation-iteration-count: 5;
 }
-#personaje {
-  position: absolute; 
-  top: 40px;          
-  left: 120px;      
-  width: 200px;      
- 
+@keyframes rotarbarril {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+     transform: rotate(80deg);
+  }
+}
+@keyframes saltos {
+  0%{
+    top: -200px;
+  }
+  30%{
+    top: 40px;
+  }
+  50%{
+    top: 40px;
+    left: 800px;
+  }
+  100%{
+    left: 200px;
+    top:300px
+  }
+  
 }
