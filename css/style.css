@@ -1,46 +1,74 @@
-#fondo {
-  width: 100vw;
+.fondo {
+  width: 100%;
   height: 100vh;
-  background-image: url('../img/bg.jpg'); /* Ruta corregida */
+
+  background-image: url("../img/bg.jpg"); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-.personaje {
-  width: 100px;
-  height: 100px;
-  background-image: url('../img/dk.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%);
+div .barril1{
+position:absolute;
+top:480px;
+right: 120px;
 }
+.barril2{
+position:absolute;
+top:500px;
+left: 180px;
+transform: rotate(135deg);
+}
+.dk{
+ position: absolute;
+  top: 250px;
+  left: 200px;
+  animation-name: saltos;
+  animation-duration: 9s;
+  animation-iteration-count: infinite;
+}
+.giroBarril{
+  animation-name: rotarBarril;
+  animation-duration: 3s;
+  animation-iteration-count:infinite;
+}
+@keyframes rotarBarril {
+  from{
+    transform: rotate(-80deg);
+  }
+  to{
+    transform: rotate(80deg);
+  }
+}
+@keyframes saltos {
+  0% {
+    top: -95px;
+    left: 100px;
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  30% {
+    top: 200px;  
+    left: 100px; 
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  60% {
+    top: 320px; 
+    left: 850px;  
+    transform: rotate(0deg);
+    opacity: 1;
+  }
 
-.barril {
-  width: 60px;
-  height: 60px;
-  background-image: url('../img/barril.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  bottom: 50px;
-}
-
-.barril-izquierdo {
-  left: 100px;
-}
-
-.barril-derecho {
-  right: 100px;
-}
-#personaje {
-  position: absolute; 
-  top: 40px;          
-  left: 120px;      
-  width: 200px;      
- 
+  70% {
+    top: 480px;   
+    left: 160px;  
+    transform: rotate(0deg);
+    opacity: 1;
+     
+  }
+   100%{top: -130px;  
+  left: 150px;
+  transform: rotate(1080deg);
+  opacity: 0.3;
+   }
 }
